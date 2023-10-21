@@ -33,6 +33,9 @@
 
 
 
+// const http = require('http')
+
+
 const express = require('express')
 const path = require('path')
 const dotenv = require('dotenv')
@@ -45,10 +48,14 @@ const cors = require('cors');
 const app = express()
 const port = process.env.PORT || 10000
 
+// const server=http.createServer(app)
+
 
 // const buildPath = path.join(__dirname, 'build')
 
 buildPath = path.join('./', 'build')
+
+
 
 
 app.use(express.static(buildPath))
@@ -79,3 +86,7 @@ app.delete("/upload", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is online on port: ${port}`)
 })
+
+// app.listen(port, hostname:'http://Predictive_Maintenance_v20/' () => {
+//     console.log(`Server is online on port: ${port}`)
+//   })
